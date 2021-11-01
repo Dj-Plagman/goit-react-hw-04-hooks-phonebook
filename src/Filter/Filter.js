@@ -1,23 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './Filter.module.css';
 
-const Filter = ({ filter, searchContact }) => {
+const Filter = ({ value, onChangle }) => {
   return (
     <label className={styles.label}>
       {' '}
       Find contacts by name
       <input
         className={styles.input}
-        onChange={event => searchContact(event.target.value)}
-        value={filter}
+        value={value}
+        type="text"
+        onChange={onChangle}
       />
     </label>
   );
-};
-
-Filter.propTypes = {
-  searchContact: PropTypes.func.isRequired,
 };
 
 export default Filter;
